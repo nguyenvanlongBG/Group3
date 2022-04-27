@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-<form action method="post">
+<form action="Welcome.php" method="post">
     Name: <input type="text" name="name" > <br>
     Date: <select name="date" >
         <option value=1>1</option>
@@ -226,13 +226,12 @@
         
       </select>
       <br>  
-    <input type="submit" name="submit" value="Submit">
+    <input type="submit">
     <input type="reset">
 </form>
 </body>
 </html>
 <?php
-if($_SERVER["REQUEST_METHOD"] == "POST"){
 function check($month, $day,$year){
   $array=['1'=>31,'2'=>28,'3'=>31,'4'=>30,'5'=>31,'6'=>30,'7'=>31,'8'=>31,'9'=>30,'10'=>31,'11'=>30,'12'=>31];
   if( $year%4 == 0) $array['2']=29;
@@ -262,5 +261,5 @@ echo 'This month has '.$array[$date['month']].' days!';
   echo 'You have choose to have an appointmenton but it not exist';
 }
 
-}
+
 ?>
