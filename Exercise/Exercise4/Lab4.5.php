@@ -14,7 +14,8 @@ function SearchData($Title)
         die("Cannot connect to $server using $user");
     }
 // query
-    $sql = "SELECT businesses.BusinessID, businesses.Name,businesses.Address, businesses.City, businesses.Telephone, businesses.URL from businesses, biz_categories, categories where businesses.BusinessID= biz_categories.BusinessID and categories.CategoryID= biz_categories.CategoryID and categories.Title ='$Title'";
+$sql="Select businesses.BusinessID from businesses, biz_categories, categories where businesses.BusinessID= biz_categories.BusinessID and categories.CategoryID= biz_categories.CategoryID and categories.Title ='$Title' "
+   // $sql = "SELECT businesses.BusinessID, businesses.Name,businesses.Address, businesses.City, businesses.Telephone, businesses.URL from businesses, biz_categories, categories where businesses.BusinessID= biz_categories.BusinessID and categories.CategoryID= biz_categories.CategoryID and categories.Title ='$Title'";
 
     $result = mysqli_query($connect, $sql);
     print_r(result);
