@@ -111,6 +111,31 @@ if ($_SERVER['REQUEST_METHOD'] != "POST") {
     </html>
     <?php
 } else {
+    $server = 'localhost';
+    $user = 'root';
+    $pass = '123456789*';
+    $mydb = 'business';
+    $table_name = 'categories';
+    $table_name2 = 'businesses';
+    $table_name3 = 'biz_categories';
+    $connect = mysqli_connect($server, $user, $pass, $mydb);
+    if (!$connect) {
+        die("Cannot connect to $server using $user");
+    }
+    $sql = "Select * from $table_name";
+    $result = mysqli_query($connect, $sql);
+    $sqlInsertBusiness = "INSERT INTO $table_name2(Name, Address ,City,Telephone, URL) VALUES(" . "'" . $_POST['Name'] . "'" . ", " . $_POST['Address'] . ", " . $_POST['City'] . ", " . $_POST['Telephone'] . ", " . $_POST['URL'] . ")";
+    mysqli_query($connect, $sqlInsertBusiness);
+    $sql = "Select CategoryID from $table_name where Title='" . $Title . "'";
+    $catID = mysqli_query($connect, $sql);
+    $sql = "Select BussinessID from $table_name2";
+    $bussID = mysqli_query($connect, $sql);
+
+    $sqlInsertBiz = "Insert $table_name3 values(" . "'" . $bussID[count($bussID) - 1] . "' , '" . $catID[0] . "')";
+
+    $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $connect->close();
+
     ?>
     <!DOCTYPE html>
     <html lang="en">
