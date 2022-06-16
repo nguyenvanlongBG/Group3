@@ -1,0 +1,25 @@
+.header{
+    width: 100%;
+
+    background-color: brown;
+}
+.content{
+    width: 100%;
+    display: flex;
+}
+.content--main{
+    width: 70%;
+}
+.main-header{
+    margin: 0;
+}
+.content--sidebar{
+    width: 30%;
+    background-color: rgb(236, 165, 79);
+}
+.sidebar--header{
+    margin: 0;
+}
+.footer{
+    background-color: blue;
+}
