@@ -1,0 +1,21 @@
+H1{
+    text-align: center;
+}
+P{ position: relative;
+    text-align: center;
+    left: 306px;
+     width: 800px;
+    margin: 5px;
+    border: 5px solid black;
+    padding: 5px;
+    background: url(https://thumbs.dreamstime.com/b/old-paper-1802296.jpg);
+}
+body{
+    background: url(https://www.designingbuildings.co.uk/w/images/3/3a/Brick_wall.jpg);
+}
+.banner{
+    background: url(https://thumbs.dreamstime.com/b/old-paper-1802296.jpg);
+}
+li{ position: relative;
+    left: 306px;
+}
