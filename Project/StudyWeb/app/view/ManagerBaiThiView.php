@@ -45,9 +45,9 @@ foreach ($data['listBaiThi'] as $bt) {
 
 
 
-                  <form action="/MVC3/deleteCauHoi" method="post" class="form_icon">
-                        <input type="hidden" name="idCauHoi" value="' . $bt['ID_Bai_Thi'] . '" ></input>
-                        <input type="hidden" name="idDeThi" value="' . $bt['ID_De'] . '" ></input>
+                  <form action="/MVC3/deleteBaiThi" method="post" class="form_icon">
+                        <input type="hidden" name="ID_Bai_Thi" value="' . $bt['ID_Bai_Thi'] . '" ></input>
+                        <input type="hidden" name="ID_De" value="' . $bt['ID_De'] . '" ></input>
                         <button class="button" type="submit"><i class="fa fa-trash-o"></i></button>
 
                   </form>

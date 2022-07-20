@@ -13,6 +13,11 @@ class DeThiModel extends Database
         $qr = "select * from de where ID_De='$ID_De'";
         return $this->query($qr);
     }
+    public function getDeThiByID_Chuong($ID_Chuong)
+    {
+        $qr = "select * from de where ID_Chuong='$ID_Chuong'";
+        return $this->query($qr);
+    }
     public function getCauHoiByID_De($ID_De)
     {
         $qr = "select * from cau_hoi where ID_De='$ID_De'";

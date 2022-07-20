@@ -6,7 +6,7 @@ $routes['default_controller'] = 'TrangChuController';
  */
 
 $routes['san-pham'] = 'product/index';
-$routes['trang-chu'] = 'admin/TrangChuController/index';
+$routes['trang-chu'] = 'TrangChuController/index';
 $routes['admin'] = 'admin/AdminController/index';
 // $routes['tin-tuc/.+-(\d+).html'] = 'news/category/';
 $routes['model'] = 'admin/ManagerTaiKhoanx/show';
@@ -30,5 +30,11 @@ $routes['updateCauHoi'] = 'admin/ManagerCauHoiDeController/update';
 $routes['addCauHoi'] = 'admin/ManagerCauHoiDeController/add';
 $routes['updatedCauHoi'] = 'admin/ManagerCauHoiDeController/updatedCauHoi';
 $routes['showBaiThi'] = 'admin/ManagerBaiThiController/showBaiThi';
+$routes['formDeThi'] = 'FormBaiThiController/show';
+$routes['chamDiem'] = 'BaiThiController/show';
+$routes['dang-nhap-processing'] = 'DangNhapController/loginProcessing';
+$routes['dang-ky-processing'] = 'DangKyController/registerProcessing';
+$routes['dang-xuat'] = 'DangNhapController/signout';
+$routes['deleteBaiThi'] = 'admin/ManagerBaiThiController/delete';
 
 // $routes['khoahochoa-Este'] = 'KhoaHocHoaController/chuong';

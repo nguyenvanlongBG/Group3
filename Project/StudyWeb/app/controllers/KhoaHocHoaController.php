@@ -11,7 +11,22 @@ class KhoaHocHoaController extends Controller
 
     public function index()
     {
-        $this->render("KhoaHocHoaView");
+
+        $chuongModel = $this->model("ChuongModel");
+        $listChuong = $chuongModel->getChuong();
+        $listChuong = $listChuong->fetchAll();
+        $listDeChuong = [];
+        $deModel = $this->model("DeThiModel");
+        foreach ($listChuong as $chuong) {
+
+            $deChuong = $deModel->getDeThiByID_Chuong($chuong['ID_Chuong']);
+            $deChuong = $deChuong->fetChAll();
+
+            $listDeChuong['' . $chuong['ID_Chuong']] = $deChuong;
+
+        }
+
+        $this->render("KhoaHocHoaView", ['listChuong' => $listChuong, 'listDeChuong' => $listDeChuong]);
 
     }
     public function chuong()

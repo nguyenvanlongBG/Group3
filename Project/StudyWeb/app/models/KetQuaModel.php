@@ -8,9 +8,9 @@ class KetQuaModel extends Database
         $qr = "Select * from ket_qua";
         return $this->query($qr);
     }
-    public function getKetQuaByKey($ID_Bai_thi, $ID_Cau_hoi)
+    public function getKetQuaByIDCauHoi($ID_Cau_hoi)
     {
-        $qr = "select * from ket_qua where ID_Bai_thi='$ID_Bai_thi' and ID_Cau_hoi='$ID_Cau_hoi'";
+        $qr = "select * from ket_qua where  ID_Cau_hoi='$ID_Cau_hoi'";
         return $this->query($qr);
     }
     public function addKetQua($ID_Bai_thi, $ID_Cau_hoi, $Lua_chon)

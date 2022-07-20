@@ -1,23 +1,25 @@
 <?php
-class Connection{
+class Connection
+{
     private static $instance = null, $conn = null;
 
-    private function __construct($config){
+    private function __construct($config)
+    {
         // kết nối database
-        try{
-            // cấu hình dns 
-            $dns = 'mysql:dbname='.$config['db'].';host='.$config['host'];
+        try {
+            // cấu hình dns
+            $dns = 'mysql:dbname=' . $config['db'] . ';host=' . $config['host'];
 
             // cấu hình opstion
             $options = [
-                PDO::MYSQL_ATTR_INIT_COMMAND =>'Set names utf8',
-                PDO::ATTR_ERRMODE => PDO:: ERRMODE_EXCEPTION
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'Set names utf8',
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             ];
-            // câu lệnh kết nối 
-            $con = new  PDO($dns, $config['user'], $config['password'], $options);
+            // câu lệnh kết nối
+            $con = new PDO($dns, $config['user'], $config['password'], $options);
             self::$conn = $con;
-        }catch(EXCEPTION $exception) {
-            $mess = $exception ->getMessage();
+        } catch (EXCEPTION $exception) {
+            $mess = $exception->getMessage();
             die($mess);
 
             // if(preg_match('/Access denied for user/ ',$mess)){
@@ -29,8 +31,9 @@ class Connection{
         }
     }
 
-    public static function getInstance($config){
-        if(self::$instance == null){
+    public static function getInstance($config)
+    {
+        if (self::$instance == null) {
             $connection = new Connection($config);
             self::$instance = self::$conn;
         }

@@ -171,10 +171,13 @@
                     >assignment</i
                   >
                   <span class="indigo-text text-lighten-1"
-                    ><h5>Orders</h5></span
+                    ><h5>Tài liệu</h5></span
                   >
                 </div>
               </a>
+
+
+
             </div>
           </div>
         </div>
@@ -185,7 +188,7 @@
           <div style="padding: 35px" align="center" class="card">
             <div class="row">
               <div class="left card-title">
-                <b>Category Management</b>
+                <b>Lịch sử</b>
               </div>
             </div>
             <div class="row">
@@ -198,7 +201,7 @@
                     >view_list</i
                   >
                   <span class="indigo-text text-lighten-1"
-                    ><h5>Category</h5></span
+                    ><h5>Lịch sử làm bài</h5></span
                   >
                 </div>
               </a>
@@ -214,7 +217,7 @@
                     >view_list</i
                   >
                   <span class="truncate indigo-text text-lighten-1"
-                    ><h5>Sub Category</h5></span
+                    ><h5></h5></span
                   >
                 </div>
               </a>
@@ -267,29 +270,29 @@
       <div class="container">
         <div class="row">
           <div class="col s12">
-            <h5 class="white-text">Icon Credits</h5>
+            <h5 class="white-text">Group 3</h5>
             <ul id="credits">
               <li>
-                Gif Logo made using
+
                 <a
                   href="https://formtypemaker.appspot.com/"
                   title="Form Type Maker"
-                  >Form Type Maker</a
+                  >Form group 3</a
                 >
                 from
                 <a
                   href="https://github.com/romannurik/FORMTypeMaker"
                   title="romannurik"
-                  >romannurik</a
+                  >group 3</a
                 >
               </li>
               <li>
                 Icons made by <a href="https://material.io/icons/">Google</a>,
-                available under
+                group 3
                 <a
                   href="https://www.apache.org/licenses/LICENSE-2.0"
                   target="_blank"
-                  >Apache License Version 2.0</a
+                  > Version 2.0</a
                 >
               </li>
             </ul>
@@ -304,7 +307,7 @@
               style="font-weight: bold"
               href="https://github.com/piedcipher"
               target="_blank"
-              >Tirth Patel</a
+              >Group 3</a
             ></span
           >
         </div>

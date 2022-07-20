@@ -1,32 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- <a href="lythuyet">Lý thuyết</a>
-    <a href="baitap">Bài tập</a> -->
-    <form action="AddUser" method="post">
-      <input type="text" name="Name" />
-      <input type="email" name="Email" />
-      <input type="text" name="Account" />
-      <input type="password" name="Password" />
-      <input type="text" name="Authorization" />
-      <input type="submit" value="Submit" />
-      <a href=""></a>
+<?php foreach ($data['listCauHoi'] as $ch): ?>
+        <div class="i-col-2 col-inline-block">
+                        <p class="i-des" data="1280:1">
+                                <a href=""><span>■</span> <?php echo $ch['Noi_dung'] ?></a>
+
+                        </p>
+
+                        <p class="i-des" data="1281:1">
+                                <a href=""><span>■</span><?php echo $ch['Dap_an_A'] ?>
+</a>
+                        </p>
+
+                        <p class="i-des" data="1282:1">
+                                <a href=""><span>■</span><?php echo $ch['Dap_an_B'] ?>
+</a>
+                        </p>
+
+                        <p class="i-des" data="1283:1">
+                                <a href=""><span>■</span><?php echo $ch['Dap_an_C'] ?>
+</a>
+                        </p>
+                        <p class="i-des" data="1283:1">
+                                <a href=""><span>■</span><?php echo $ch['Dap_an_D'] ?>
+</a>
+                        </p>
+         </div>
+<?php endforeach;?>
 
 
-      <form action="/deleteUser" method="get" >
 
-						  <input type="submit" class="button" ><i class="fa fa-pencil-square-o"></i></input>
-							<button class="button"><i class="fa fa-trash-o"></i></button>
 
-						</form>
 
-      <button onclick=""></button>
-    </form>
-  </body>
-</html>
+ <?php for ($i = 1; $i < 10; $i++) {?>
+
+                         <ul>
+                            <li>
+                                <?php echo "<h4>Câu $i </h4>" ?>
+
+
+                                    <p>My sister often goes to ......... church by .............. bus.</p>
+                                    <div class="part-item detail question-detail" style="padding: 10px">
+                                        <div class="question-answer-detail" data-type="0">
+                                                            <!-- Single choice-->
+
+											<label for="<?php echo $i . '1' ?>" class="container">Đáp án 1
+									           <input type="radio" name="<?php echo 'Ketquacau' . $i ?>" id="<?php echo $i . '1' ?>" value="1" >
+									           <span class="checkmark"></span>
+
+								        	</label>
+                                             <br></br>
+                                           <label for="<?php echo $i . '2' ?>" class="container">Đáp án 2
+												<input type="radio" name="<?php echo 'Ketquacau' . $i ?>" id="<?php echo $i . '2' ?>"  value="1">
+												<span class="checkmark"></span>
+
+											</label>
+											<br></br>
+											<label for="<?php echo $i . '3' ?>" class="container"> Đáp án 3
+											    <input  type="radio" name="<?php echo 'Ketquacau' . $i ?>" id="<?php echo $i . '3' ?>" value="3">
+											     <span class="checkmark"></span>
+
+											</label>
+											<br></br>
+											<label for="<?php echo $i . '4' ?>" class="container"> Đáp án 4
+												<input  type="radio" name="<?php echo 'Ketquacau' . $i ?>" id="<?php echo $i . '4' ?>" value="4">
+												<span class="checkmark"></span>
+
+											</label>
+                                            <br></br>
+                                        </div>
+
+					        </li>
+
+                        </ul>
+                    <?php }?>

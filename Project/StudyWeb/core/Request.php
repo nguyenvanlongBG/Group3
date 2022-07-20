@@ -33,8 +33,11 @@ class Request
             foreach ($_GET as $key => $value) {
                 if (is_array($value)) {
                     $dataGet[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
+                    $dataMethod[$key] = $value;
                 } else {
                     $dataGet[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+                    $dataMethod[$key] = $value;
+
                 }
 
             }
@@ -44,8 +47,12 @@ class Request
             foreach ($_POST as $key => $value) {
                 if (is_array($value)) {
                     $dataGet[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
+                    $dataMethod[$key] = $value;
+
                 } else {
                     $dataGet[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+                    $dataMethod[$key] = $value;
+
                 }
             }
         }

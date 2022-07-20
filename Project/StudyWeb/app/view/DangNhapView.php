@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="public/css/login.css" />
   </head>
   <body>
+   <?php if (isset($_SESSION['dangky'])) {unset($_SESSION['old']);unset($_SESSION['errors']);}?>
+    <?php if (isset($_SESSION['dangky'])): ?>
+        <script> alert(" Đăng kí thành công .Vui lòng đăng nhập!"); </script>
+      <?php endif?>
+      <?php if (isset($_SESSION['dangky'])) {unset($_SESSION['dangky']);}?>
     <section>
       <div class="img-bg">
         <img src="public/images/avt@2x.png" alt="Hình Ảnh Minh Họa" />
@@ -15,14 +20,40 @@
       <div class="noi-dung">
         <div class="form">
           <h2>Trang Đăng Nhập</h2>
-          <form action="">
+          <form action="dang-nhap-processing" method="post">
             <div class="input-form">
-              <span>Tên Người Dùng</span>
-              <input type="text" name="" />
+              <span>Email</span>
+              <input type="email" name="login-id"
+      class="form-control"
+       placeholder="Username"
+      value="<?php if (isset($_SESSION['old'])) {
+    echo $_SESSION['old']['login-id'];
+}?>">
+       <?php if (isset($_SESSION['errors']['login-id'])): ?>
+      <div class="invalid-feedback">
+        <h4 style="color:red" ><?php echo $_SESSION['errors']['login-id'] ?></h4>
+      </div>
+      <?php endif?>
             </div>
             <div class="input-form">
               <span>Mật Khẩu</span>
-              <input type="password" name="" />
+              <input type="password" name="password"
+      class="form-control"
+       placeholder="Password">
+
+      <?php if (isset($_SESSION['errors']['password'])): ?>
+      <div class="invalid-feedback">
+      <h4 style="color:red" ><?php echo $_SESSION['errors']['password'] ?></h4>
+      </div>
+      <?php endif?>
+      <?php if ((!isset($_SESSION['errors']['password'])) && (!isset($_SESSION['errors']['login-id']))): ?>
+      <div class="invalid-feedback">
+        <h4 style="color:red" ><?php if (isset($_SESSION['errors']['failed'])) {
+    echo $_SESSION['errors']['failed'];
+}
+?></h4>
+      </div>
+      <?php endif?>
             </div>
             <div class="nho-dang-nhap">
               <label><input type="checkbox" name="" /> Nhớ Đăng Nhập</label>

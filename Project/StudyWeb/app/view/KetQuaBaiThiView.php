@@ -1,3 +1,8 @@
+ <!-- Cần CSS phần này -->
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,36 +64,7 @@
 		</nav>
 		</div>
         <div class="cate-col-right">
-            <ul class="list-content-type1">
-                <?php
-
-foreach ($data['listChuong'] as $chuong): ?>
-                 <li data-id="136">
-                    <div class="box-inline-block">
-                        <div class="i-col-1 col-inline-block">
-
-
-                            <h2 class="i-title">
-
-
-                                   <a href="#"><?php echo $chuong['Ten'] ?></a>
-                                </form>
-                            </h2>
-                        </div>
-                        <div class="i-col-2 col-inline-block">
-                            <?php foreach ($data['listDeChuong'][$chuong['ID_Chuong']] as $de): ?>
-
-                                    <form action="/MVC3/formDeThi" method="post" class="form_icon" >
-                                        <input type="hidden" name="ID_De" value=<?php echo $de['ID_De'] ?> ></input>
-                                        <button class="button" type="submit"><?php echo $de['Ten'] ?>
-</button>
-                                    </form>
-                            <?php endforeach;?>
-                        </div>
-                    </div>
-                </li>
-                <?php endforeach;?>
-                            </ul>
+<?php echo $data['Diem'] ?>
         </div>
 </body>
 </html>
